@@ -52,14 +52,14 @@ pipeline {
                         dir('x64') {
                             withEnv(["id=${jb.id}"]) {
                                 script {
-                                    bat 'curl -f -o install.tar.gz -L https://lichaoran:%wsl_jenkins_api_token%@jenkins.osinfra.cn/job/openeuler-wsl/job/openeuler-wsl-rootfs/%id%/arch=x86_64,label=docker-buildx/artifact/outdir/%release%-x86_64.tar.gz'
+                                    bat 'curl -f -o install.tar.gz -L http://lichaoran:%wsl_jenkins_api_token%@120.46.72.76:8080/job/EBS-OS-build/job/wsl/job/openeuler-wsl-rootfs/%id%/arch=x86_64,label=docker-buildx/artifact/outdir/%release%-x86_64.tar.gz'
                                 }
                             }
                         }
                         dir('ARM64') {
                             withEnv(["id=${jb.id}"]) {
                                 script {
-                                    bat 'curl -f -o install.tar.gz -L https://lichaoran:%wsl_jenkins_api_token%@jenkins.osinfra.cn/job/openeuler-wsl/job/openeuler-wsl-rootfs/%id%/arch=aarch64,label=docker-buildx/artifact/outdir/%release%-aarch64.tar.gz'
+                                    bat 'curl -f -o install.tar.gz -L http://lichaoran:%wsl_jenkins_api_token%@120.46.72.76:8080/job/EBS-OS-build/job/wsl/job/openeuler-wsl-rootfs/%id%/arch=aarch64,label=docker-buildx/artifact/outdir/%release%-aarch64.tar.gz'
                                 }
                             }
                         }
@@ -70,7 +70,7 @@ pipeline {
                     writeFile file: 'certificate.txt', text: cert_b64
                 }
 
-                bat 'powershell "certutil -decode certificate.txt certificate.pfx"'
+                bat 'powershell "certutil -decode -f certificate.txt certificate.pfx"'
                 bat 'powershell "Import-PfxCertificate -CertStoreLocation Cert:LocalMachine\\Trust -FilePath certificate.pfx"'
                 bat 'powershell "Import-PfxCertificate -CertStoreLocation Cert:CurrentUser\\My -FilePath certificate.pfx"'
                 bat '.\\build.bat'

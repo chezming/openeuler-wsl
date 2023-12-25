@@ -49,13 +49,13 @@ pipeline {
                                         withEnv(["id=${jb.id}"]) {
                                             dir ('x64') {
                                                 retry(3) {
-                                                    bat 'curl -f -o install.tar.gz -L https://lichaoran:%wsl_jenkins_api_token%@jenkins.osinfra.cn/job/openeuler-wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=x86_64,label=docker-buildx/artifact/outdir/%release%-x86_64.tar.gz'
+                                                    bat 'curl -f -o install.tar.gz -L http://lichaoran:%wsl_jenkins_api_token%@120.46.72.76:8080/job/EBS-OS-build/job/wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=x86_64,label=docker-buildx/artifact/outdir/%release%-x86_64.tar.gz'
                                                 }
                                             }
     
                                             dir ('ARM64') {
                                                 retry(3) {
-                                                    bat 'curl -f -o install.tar.gz -L https://lichaoran:%wsl_jenkins_api_token%@jenkins.osinfra.cn/job/openeuler-wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=aarch64,label=docker-buildx/artifact/outdir/%release%-aarch64.tar.gz'
+                                                    bat 'curl -f -o install.tar.gz -L http://lichaoran:%wsl_jenkins_api_token%@120.46.72.76:8080/job/EBS-OS-build/job/wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=aarch64,label=docker-buildx/artifact/outdir/%release%-aarch64.tar.gz'
                                                 }
                                             }
                                         }
@@ -96,13 +96,13 @@ pipeline {
                                         withEnv(["id=${jb.id}"]) {
                                             dir ('x64') {
                                                 retry(3) {
-                                                    bat 'curl -f -o install.tar.gz -L https://lichaoran:%wsl_jenkins_api_token%@jenkins.osinfra.cn/job/openeuler-wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=x86_64,label=docker-buildx/artifact/outdir/%release%-x86_64.tar.gz'
+                                                    bat 'curl -f -o install.tar.gz -L http://lichaoran:%wsl_jenkins_api_token%@120.46.72.76:8080/job/EBS-OS-build/job/wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=x86_64,label=docker-buildx/artifact/outdir/%release%-x86_64.tar.gz'
                                                 }
                                             }
     
                                             dir ('ARM64') {
                                                 retry(3) {
-                                                    bat 'curl -f -o install.tar.gz -L https://lichaoran:%wsl_jenkins_api_token%@jenkins.osinfra.cn/job/openeuler-wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=aarch64,label=docker-buildx/artifact/outdir/%release%-aarch64.tar.gz'
+                                                    bat 'curl -f -o install.tar.gz -L http://lichaoran:%wsl_jenkins_api_token%@120.46.72.76:8080/job/EBS-OS-build/job/wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=aarch64,label=docker-buildx/artifact/outdir/%release%-aarch64.tar.gz'
                                                 }
                                             }
                                         }
@@ -143,13 +143,13 @@ pipeline {
                                         withEnv(["id=${jb.id}"]) {
                                             dir ('x64') {
                                                 retry(3) {
-                                                    bat 'curl -f -o install.tar.gz -L https://lichaoran:%wsl_jenkins_api_token%@jenkins.osinfra.cn/job/openeuler-wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=x86_64,label=docker-buildx/artifact/outdir/%release%-x86_64.tar.gz'
+                                                    bat 'curl -f -o install.tar.gz -L http://lichaoran:%wsl_jenkins_api_token%@120.46.72.76:8080/job/EBS-OS-build/job/wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=x86_64,label=docker-buildx/artifact/outdir/%release%-x86_64.tar.gz'
                                                 }
                                             }
     
                                             dir ('ARM64') {
                                                 retry(3) {
-                                                    bat 'curl -f -o install.tar.gz -L https://lichaoran:%wsl_jenkins_api_token%@jenkins.osinfra.cn/job/openeuler-wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=aarch64,label=docker-buildx/artifact/outdir/%release%-aarch64.tar.gz'
+                                                    bat 'curl -f -o install.tar.gz -L http://lichaoran:%wsl_jenkins_api_token%@120.46.72.76:8080/job/EBS-OS-build/job/wsl/job/openeuler-wsl-rootfs-ci/%id%/arch=aarch64,label=docker-buildx/artifact/outdir/%release%-aarch64.tar.gz'
                                                 }
                                             }
                                         }
